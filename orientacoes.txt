@@ -1,0 +1,56 @@
+Programação 2 2023/02
+Trabalho 1
+Campo Minado
+Você já jogou Campo Minado? É um joguinho bacana que vem dentro de um determinado sistema
+operacional cujo nome não conseguimos lembrar. Bem, o objetivo do jogo é descobrir onde estão
+todas as minas dentro de um campo M × N. Para ajudá-lo, o jogo mostra um número em um quadrado
+que informa quantas minas existem adjacentes a esse quadrado. Por exemplo, suponha o campo 4 ×
+4 a seguir com 2 minas (representadas por um caractere '*'):
+*...
+....
+.*..
+....
+Se representássemos o mesmo campo colocando os números das dicas descritas acima, teríamos:
+*100
+2210
+1*10
+1110
+Como você já deve ter notado, cada quadrado pode ter no máximo 8 quadrados adjacentes.
+Entrada:
+A entrada consistirá em um número arbitrário de campos. A primeira linha de cada campo contém dois
+números inteiros n (0 <n, m ≤ 100), que representam o número de linhas e colunas do campo,
+respectivamente. As próximas n linhas contêm exatamente m caracteres e representam o campo.
+Cada quadrado seguro é representado por um caractere '.' (Sem as aspas) e cada quadrado minado
+é representado por um caractere '*' (também sem as aspas). A primeira linha de campo em que n =
+m = 0 representa o final da entrada e não deve ser processada.
+Resultado
+Para cada campo, você deve imprimir a seguinte mensagem apenas em uma linha:
+Field #x:
+Onde x representa o número do campo (começando em 1). As próximas n linhas devem conter o
+campo com os caracteres '.' substituídos pelo número de minas adjacentes a esse quadrado. Deve
+haver uma linha vazia entre as saídas do campo.
+Exemplo de entrada:
+4 4
+*...
+....
+.*..
+....
+3 5
+**...
+.....
+.*...
+0 0
+Exemplo de saída:
+Field #1:
+*100
+2210
+1*10
+1110
+Field #2:
+**100
+33200
+1*100
+O que deve ser entregue: todos os fontes desenvolvidos. Você poderá utilizar Java, Python
+ou C.
+Formato: individual
+Data limite para entrega: 25/10/202
