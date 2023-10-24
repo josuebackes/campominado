@@ -1,33 +1,42 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class CampoMinado {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int numeroCampo = 1;
+        try {
+            BufferedReader leitor = new BufferedReader(new FileReader("entrada.txt"));
+            int numeroCampo = 1;
+            String linha;
 
-        while (true) {
-            int linhas = scanner.nextInt();
-            int colunas = scanner.nextInt();
+            while ((linha = leitor.readLine()) != null) {
+                String[] dimensoes = linha.split(" ");
+                int linhas = Integer.parseInt(dimensoes[0]);
+                int colunas = Integer.parseInt(dimensoes[1]);
 
-            if (linhas == 0 && colunas == 0) {
-                break;
+                if (linhas == 0 && colunas == 0) {
+                    break;
+                }
+
+                char[][] campoMinado = lerCampoMinado(leitor, linhas, colunas);
+
+                System.out.println("Field #" + numeroCampo + ":");
+                imprimirCampoMinado(campoMinado);
+
+                numeroCampo++;
             }
 
-            char[][] campoMinado = lerCampoMinado(scanner, linhas, colunas);
-
-            System.out.println("Field #" + numeroCampo + ":");
-            imprimirCampoMinado(campoMinado);
-
-            numeroCampo++;
+            leitor.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
-    private static char[][] lerCampoMinado(Scanner scanner, int linhas, int colunas) {
+    private static char[][] lerCampoMinado(BufferedReader leitor, int linhas, int colunas) throws IOException {
         char[][] campoMinado = new char[linhas][colunas];
-        scanner.nextLine();
 
         for (int i = 0; i < linhas; i++) {
-            String linha = scanner.nextLine();
+            String linha = leitor.readLine();
             campoMinado[i] = linha.toCharArray();
         }
 
