@@ -52,5 +52,3 @@ Field #2:
 1*100
 O que deve ser entregue: todos os fontes desenvolvidos. Você poderá utilizar Java, Python
 ou C.
-Formato: individual
-Data limite para entrega: 25/10/202
